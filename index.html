@@ -22,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <title>Workshop on Learned Robot Representations | RSS 2025</title>
+  <title>Workshop on Generalizable Priors for Robot Manipulation | CoRL 2025</title>
   <link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -140,25 +140,18 @@
   <div class="container" style="padding-bottom: 0px;">
     <div class="section" id="overview">
       <h2>Overview</h2>
-      <p>General-purpose robotic systems require powerful representations and abstractions. In deployment, such robots
-        are expected to encounter diverse and complex scenarios. While recent large-scale learned models exhibit
-        remarkable generalization, similarly getting representations that can flexibly generalize to all the
-        unanticipated situations a robot might face remains challenging, especially given the cost of robot data. Thus,
-        it is important to investigate how to best learn generalizable representations, evaluate their effectiveness,
-        and leverage them for downstream robotics tasks.</p>
-      <p>Ideally, these representations should capture: (1) spatial-dynamic information needed for fine-grained control,
-        (2) semantic information required for common-sense reasoning and scene understanding, and (3) knowledge of
-        conventions needed for smooth human-robot interactions. Additionally, these representations must be robust to
-        the diversity of tasks, scenes, and operators the robot will encounter. In this workshop, we aim to explore the
-        following: What makes a good robot representation, how can we learn them, and how can we most effectively make
-        use of them?</p>
-      <p>Our speakers and panelists are pioneering robotics and machine learning researchers defining the state of the
-        art on a range of topics, including: end-to-end control, task and motion planning (TAMP), human-robot
-        interaction (HRI), scene understanding / SLAM, and more. We invite the community for submissions in these areas
-        as well as from a wider set of perspectives – for example, submissions addressing how the following fields might
-        guide robotics research: (1) deep representation learning in vision and language; (2) learning representations
-        for field robotics and AI, where data is extremely scarce or noisy; or (3) bias and robustness in neural
-        representations.</p>
+      <p>Generalist robot policies are those capable of performing complex manipulation tasks across a wide range of environments. 
+        Recent years have seen significant progress toward this goal, driven by advances in large-scale teleoperated robot datasets,
+        structured representations for policy learning, hierarchical planning with vision-language models (VLMs), and online learning for 
+        adaptation to novel tasks and environments. Although multiple promising approaches are emerging, it is essential to understand the tradeoffs 
+        inherent in each to develop methods that not only generalize to new scenarios but also execute tasks with high precision and reliability.</p>
+      <p>An ideal framework for learning such generalizable policies should: (1) scale beyond simple pick-and-place tasks and continually improve as
+        more task data becomes available, (2) learn effectively from diverse data sources, including robot teleoperation, simulated environments, and human demonstration videos,
+        and (3) utilize representations of the world that are applicable across tasks requiring varying levels of precision and dexterity. This workshop will focus on a central 
+        question: What are the right priors for generalizable policy learning, and how can we best incorporate these priors into policy learning frameworks?</p>
+      <p>Our speakers and panelists are leading researchers in robotics and machine learning, working at the forefront of topics including end-to-end control,
+        sim-to-real transfer, learning from human videos, and large-scale robotic data collection,  among others.  
+        We invite the community to submit their latest work and ideas for discussion.</p>
 
 
     </div>
@@ -186,33 +179,23 @@
       <h3 style="text-align: center;">Areas of Interest</h3>
       <p>We aim to investigate the following topics and research questions:
       <ul>
-        <li> What sorts of pre-training tasks, objectives, data, or models yield good representations for robotics? <ul>
-            <li>How do we evaluate or choose good pre-trained models to fine-tune into robot policies or leverage in a
-              perception or control stack?</li>
-            <li>Is “embodied” or “grounded” data necessary for good robot representations, or is general pre-training
-              data sufficient?</li>
-            <li>When is fine-tuning large models from other domains enough for robotic foundation models and when do we
-              need robot-specific large-scale training?</li>
-            <li>How do we elicit representations at a level of granularity and semantic abstraction that is appropriate
-              for robot tasks?</li>
+        <li> What main bottlenecks prevent current robot policies from generalizing to unseen environments? <ul>
+            <li>Is the challenge primarily a data problem, or are there fundamental limitations in current approaches?</li>
           </ul>
-        <li> What functionalities do pre-trained representations grant robots? E.g.: <ul>
-            <li>Common-sense semantic understanding (“what” to look for)</li>
-            <li>Reasoning about semantics, dynamics, spatial features, or motion (“how” to act)</li>
-            <li>Conventions for interacting with humans (dialogue, goal specification, information gathering,
-              interpretability)</li>
+        <li>Can pretrained models from related fields, such as vision and language, be leveraged to improve robot policies? <ul>
+            <li>What is the most effective way to incorporate these models into robotics?</li>
+            <li>Should we fine-tune them on robot data, or use their representations and outputs for downstream policy learning?</li>
           </ul>
-        <li> How are these pre-trained representations best integrated into robot systems? E.g.: <ul>
-            <li>End-to-end learned policies learned with BC or RL (e.g., RT-2, OpenVLA)</li>
-            <li>Zero-shot controllers (e.g., Code as Policies, MOKA)</li>
-            <li>Hand-crafted scene or task representations (e.g., semantic scene graphs, LeRFs, neural TAMP, image
-              generation as subgoals)</li>
+        <li>How can we best utilize simulated environments to promote generalization? <ul>
+            <li>Do simulated environments need to closely resemble the real world for successful policy transfer, or can they be substantially different?</li>
+            <li>What role do generative models play in the sim-to-real pipeline? Are they consistent enough to make reliable long-term predictions over full trajectories?
+</li>
           </ul>
-        <li> How can learned representations be de-biased such that the robots using them can:<ul>
-            <li>Robustly operate in underrepresented environments (e.g., households from cultures around the world, not
-              just “conventional” households)</li>
-            <li>Understand language and behaviors from diverse human operators</li>
+        <li>Is it possible to design universal priors that work across a wide range of tasks and domains, including simulation, the real world, and internet videos?<ul>
+            <li>Can object-centric representations provide this capability?</li>
+            <li>Can 3D representations facilitate cross-domain transfer?</li>
           </ul>
+        <li>How should we design standardized benchmarks for evaluating such generalist policies?
       </ul>
       </p>
     </div>
@@ -221,7 +204,7 @@
 
       <h2>Submission Guidelines</h2>
 
-      <h3>Submission Portal: <a href="https://openreview.net/group?id=roboticsfoundation.org/RSS/2025/Workshop/RoboReps"
+      <h3>Submission Portal: <a href=""
           target="_blank">OpenReview</a></h3>
 
       <p>
@@ -233,7 +216,7 @@
       </p>
 
       <p>
-        We request that submissions are in the RSS format. They should <i>not</i> be
+        We request that submissions are in the CoRL format. They should <i>not</i> be
         anonymized.
       </p>
 
@@ -250,7 +233,7 @@
 
 
 
-    <div class="section" id="dates" style="align-content: center;">
+<!--     <div class="section" id="dates" style="align-content: center;">
       <h2>Important Dates</h2>
       <table class="calculator table-borderless" style="text-align:center; margin: 0 auto;">
         <!-- <tr>
@@ -284,7 +267,7 @@
           </td>
         </tr>
       </table>
-    </div>
+    </div> -->
 
     <div class="section" id="schedule" style="align-content: center;">
       <h2>Schedule</h2>
